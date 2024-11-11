@@ -5,9 +5,7 @@ import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 proxies = {"http": "http:127.0.0.1:8080", "https": "http:127.0.0.1:8080"}
-
 path = 'filter?category='
-
 
 def sqli_string_col(url, num_col):
 	print('Figuring the column of type string...')
